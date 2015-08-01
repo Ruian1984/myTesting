@@ -1,6 +1,11 @@
 ﻿Module Module1
 
 
+    Function Fib(ByVal intNumber As Integer) As Integer
+        If intNumber = 0 Then
+            Return 1
+        End If
+    End Function
 
     Sub Main()
 
