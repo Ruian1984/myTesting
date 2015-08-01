@@ -30,29 +30,29 @@
         While choice.ToUpper <> "Q"
             Console.WriteLine("A. Display nth term of a fibonacci only")
             Console.WriteLine("B. Display fibonacci Sequence")
+            Console.WriteLine("C. Display asterisk...")
             Console.WriteLine("Q. Quit")
             Console.WriteLine("")
             choice = Console.ReadLine()
 
+            If choice.ToUpper = "Q" Then
+                Exit While
+            End If
+            Console.WriteLine("Enter A Number...")
+            intNumber = CInt(Console.ReadLine())
             If choice.ToUpper = "A" Then
-                Console.WriteLine("Enter A Number...")
-                intNumber = CInt(Console.ReadLine())
                 Console.WriteLine(" Ang ika " & intNumber & " sa fibonacci is = " & Fib(intNumber))
             ElseIf choice.ToUpper = "B" Then
-                Console.WriteLine("Enter A Number...")
-                intNumber = CInt(Console.ReadLine())
                 FibSequence(intNumber)
+            ElseIf choice.ToUpper = "C" Then
+                For x As Integer = 1 To intNumber
+                    For y As Integer = 1 To x
+                        Console.Write("* ")
+                    Next
+                    Console.WriteLine("")
+                Next
             End If
         End While
-
-
-
-        
-
-
-        '        Console.ReadLine()
-
-
 
     End Sub
 
