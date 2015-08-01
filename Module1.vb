@@ -9,9 +9,17 @@
         End If
     End Function
 
-    Function FibSequence()
-
-    End Function
+    Sub FibSequence(ByVal intNumber As Integer)
+        Dim str As String = ""
+        For x As Integer = 1 To intNumber
+            If x <= 2 Then
+                str &= "1 "
+            Else
+                str &= Fib(x) & " "
+            End If
+        Next
+        Console.WriteLine("Sequence is " & str)
+    End Sub
 
     Sub Main()
 
@@ -26,14 +34,14 @@
             Console.WriteLine("")
             choice = Console.ReadLine()
 
-            If choice = "A" Then
+            If choice.ToUpper = "A" Then
                 Console.WriteLine("Enter A Number...")
                 intNumber = CInt(Console.ReadLine())
                 Console.WriteLine(" Ang ika " & intNumber & " sa fibonacci is = " & Fib(intNumber))
-            ElseIf choice = "B" Then
+            ElseIf choice.ToUpper = "B" Then
                 Console.WriteLine("Enter A Number...")
                 intNumber = CInt(Console.ReadLine())
-                Console.WriteLine(" Ang ika " & intNumber & " sa fibonacci is = " & Fib(intNumber))
+                FibSequence(intNumber)
             End If
         End While
 
